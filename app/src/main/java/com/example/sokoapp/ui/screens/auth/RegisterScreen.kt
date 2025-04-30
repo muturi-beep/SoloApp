@@ -7,7 +7,6 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -17,7 +16,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -76,7 +74,8 @@ fun RegisterScreen(
             onValueChange = { username = it },
             label = { Text("Username") },
             leadingIcon = { Icon(Icons.Filled.Person, contentDescription = "Username Icon") },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
         )
         //End of username
 
@@ -164,7 +163,7 @@ fun RegisterScreen(
             visualTransformation = if (confirmPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
             leadingIcon = { Icon(Icons.Filled.Lock, contentDescription = "Confirm Password Icon") },
             trailingIcon = {
-                val image = if (confirmPasswordVisible) painterResource(R.drawable.visibilityoff)  else painterResource(R.drawable.visibilityoff)
+                val image = if (confirmPasswordVisible) painterResource(R.drawable.visibility)  else painterResource(R.drawable.visibilityoff)
                 IconButton(onClick = { confirmPasswordVisible = !confirmPasswordVisible }) {
                     Icon(image, contentDescription = if (confirmPasswordVisible) "Hide Password" else "Show Password")
                 }
@@ -181,7 +180,7 @@ fun RegisterScreen(
                 .height(50.dp)
                 .background(
                     brush = Brush.horizontalGradient(
-                        colors = listOf(Color(0xFF00C6FF), Color(0xFF0072FF))
+                        colors = listOf(Color(0xFF00C6FF), Color(0xFFFFDD00))
                     ),
                     shape = MaterialTheme.shapes.medium
                 ),
@@ -214,3 +213,5 @@ fun RegisterScreen(
         }
     }
 }
+
+

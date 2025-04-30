@@ -124,8 +124,8 @@ fun ItemScreen(navController: NavController){
 
         //Added a Column part to make the products scrollable after searchbar part
 
-        Column(modifier = Modifier.verticalScroll(rememberScrollState())
-        ) {
+        Column(modifier = Modifier.verticalScroll(rememberScrollState()))
+        {
 
             //Row
             Spacer(modifier = Modifier.height(20.dp))

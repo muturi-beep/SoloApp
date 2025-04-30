@@ -7,6 +7,10 @@ import androidx.room.Query
 import com.example.sokoapp.model.User
 
 
+
+
+
+// communicates with database/backend to check if information filled is correct
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
